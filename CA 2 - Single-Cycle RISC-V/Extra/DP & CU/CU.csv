@@ -1,0 +1,21 @@
+Instruction_type,Instruction,PCSrc,ResultSrc,MemWrite,ALUControl,ALUSrc,ImmSrc,RegWrite
+R-Type,ADD,00,00,0,010,0,XX,1
+R-Type,SUB,00,00,0,110,0,XX,1
+R-Type,SLTU,00,00,0,100,0,XX,1
+R-Type,SLT,00,00,0,111,0,XX,1
+R-Type,OR,00,00,0,001,0,XX,1
+R-Type,AND,00,00,0,000,0,XX,1
+I-Type,LW,00,01,0,010,1,000,1
+I-Type,ADDI,00,00,0,010,1,000,1
+I-Type,SLTUI,00,00,0,100,1,000,1
+I-Type,SLTI,00,00,0,111,1,000,1
+I-Type,XORI,00,00,0,011,1,000,1
+I-Type,ORI,00,00,0,001,1,000,1
+S-Type,SW,00,XX,1,010,1,001,0
+J-Type,JALR,10,10,0,010,1,000,1
+J-Type,JAL,01,10,0,010,X,011,1
+B-Type,BEQ,zero ? 1 : 2'b00,00,0,011,0,010,0
+B-Type,BNE,zero ? 0 : 2'b01,00,0,011,0,010,0
+B-Type,BLT,sign + ? 1 : 2'b00,00,0,111,0,001,0
+B-Type,BGE,sign + or zero ? 1 : 2'b00,00,0,111,0,000,0
+U-Type,LUI,00,11,0,XXX,X,100,1
